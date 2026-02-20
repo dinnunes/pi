@@ -140,3 +140,27 @@ footer {
 @media (min-width: 1024px) {
     body { padding: 80px 10% 40px 10%; }
 }
+
+.contact-area {
+    margin: 60px 0 20px 0;
+    text-align: left; /* Alinhado à esquerda como o resto do site */
+}
+
+.telegram-button {
+    color: #f7f5f5;
+    text-decoration: none;
+    font-size: 0.75rem; /* Pequeno */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid #333; /* Uma borda sutil em vez de fundo cheio */
+    padding: 8px 15px;
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.telegram-button:hover {
+    opacity: 1;
+    border-color: #f7f5f5;
+    background-color: #f7f5f5;
+    color: #111111;
+}
