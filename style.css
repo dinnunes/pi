@@ -93,6 +93,13 @@ input[type="text"]:focus {
     justify-content: space-between;
 }
 
+.product-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 40px; /* Aumentei de 20px para 40px para afastar do preço */
+    opacity: 0.8;
+}
+
 /* 4. Tipografia e Botão */
 .tagline {
     font-size: 1.1rem;
