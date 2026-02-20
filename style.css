@@ -182,7 +182,6 @@ footer {
     line-height: 1.6;
     margin-bottom: 20px;
     opacity: 0.8;
-    text-transform: uppercase;
 }
 
 /* Ética em Grid */
@@ -243,4 +242,24 @@ footer {
     color: #f7f5f5;
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+.text-columns {
+    column-count: 1;
+    column-gap: 80px; /* Aumentei o espaço entre as colunas significativamente */
+    color: #cccccc;   /* A cor mais macia que sugerimos */
+    opacity: 1;       /* Removi a opacidade para a cor #cccccc brilhar pura */
+    line-height: 1.8; /* Aumentei um pouco o espaço entre as linhas para facilitar a leitura */
+    text-align: left; /* No brutalismo, o alinhado à esquerda costuma cansar menos que o justificado */
+}
+
+@media (min-width: 768px) {
+    .text-columns {
+        column-count: 2;
+    }
+}
+
+.text-columns p {
+    margin-bottom: 30px; /* Isso cria o espaço (quebra) entre um bloco de texto e outro */
+    break-inside: avoid;
 }
