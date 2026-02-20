@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Diário — Pitore</title>
+</head>
+<body>
+
+    <span class="logo">▭</span>
+
+    <nav>
+        <a href="index.html">Lar</a>
+        <a href="butique.html">Butique</a>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+
+    <main>
+        <header class="diario-header">
+            <h1 class="section-title">Diário</h1>
+            <p class="simple-text">Fragmentos de ordem em meio ao caos.</p>
+        </header>
+
+        <div class="search-wrapper">
+            <input type="text" id="diarioSearch" placeholder="Procurar por título ou tema..." onkeyup="filterArticles()">
+        </div>
+
+        <ul class="article-list" id="articleList">
+            
+            <li class="article-item" data-category="Dinheiro PiDin">
+                <span class="article-date">20 FEV</span>
+                <span class="article-tag tag-pidin">PiDin</span>
+                <a href="artigos/exemplo-dinheiro.html" class="article-link">A psicologia por trás das dívidas de R$ 3.500</a>
+            </li>
+
+            <li class="article-item" data-category="Filosofia PiSofia">
+                <span class="article-date">18 FEV</span>
+                <span class="article-tag tag-pisofia">PiSofia</span>
+                <a href="artigos/exemplo-filosofia.html" class="article-link">O que Robert Kiyosaki não te contou</a>
+            </li>
+
+            <li class="article-item" data-category="Estilo Pistilo">
+                <span class="article-date">15 FEV</span>
+                <span class="article-tag tag-pistilo">Pistilo</span>
+                <a href="artigos/exemplo-estilo.html" class="article-link">Brutalismo: O luxo do essencial</a>
+            </li>
+
+        </ul>
+    </main>
+
+    <footer>
+        <p>Pitore © 2026 por Din está licenciado sob CC BY 4.0</p>
+    </footer>
+
+    <script>
+        function filterArticles() {
+            let input = document.getElementById('diarioSearch').value.toLowerCase();
+            let items = document.getElementsByClassName('article-item');
+
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    items[i].style.display = "grid";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
