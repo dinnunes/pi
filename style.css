@@ -93,3 +93,26 @@ footer {
     opacity: 0.5;
     line-height: 1.6;
 }
+/* Estilos específicos para a Butique */
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: -0.01em;
+    opacity: 0.9;
+}
+
+.liivro-tag {
+    font-size: 0.65rem; /* Bem pequeno como solicitado */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
