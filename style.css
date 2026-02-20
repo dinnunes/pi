@@ -1,34 +1,95 @@
-/* Estética Pitore - Brutalismo Minimalista */
+/* Reset e Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: white; /* A cor da moldura */
+    height: 100%;
+}
+
 body {
     background-color: #111111;
     color: #f7f5f5;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    margin: 8px; /* Sua margem exata */
-    padding: 0;
-    line-height: 1.5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Criando a moldura de 8px */
+    margin: 8px; 
+    min-height: calc(100vh - 16px);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px; /* Respiro interno para o conteúdo */
     -webkit-font-smoothing: antialiased;
 }
 
-a {
-    color: #f7f5f5;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+/* Responsividade */
+@media (min-width: 768px) {
+    body {
+        padding: 80px 10% 40px 10%; /* Mais espaço em telas grandes estilo Apple */
+    }
 }
 
-a:hover {
-    opacity: 0.7;
+/* Logo Pitore ▭ */
+.logo {
+    font-size: 48px;
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+}
+
+/* Saudação e Textos */
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
 }
 
 nav {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
-h1, h2, h3 {
-    font-weight: normal;
-    margin-top: 0;
+nav a {
+    color: #f7f5f5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-right: 20px;
+    text-transform: lowercase;
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
-/* Estrutura para os artigos */
-article {
-    max-width: 800px;
+nav a:hover {
+    opacity: 1;
+}
+
+/* Busca Simples Estilo Apple */
+.search-container {
+    margin-bottom: 60px;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #f7f5f5;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    font-family: 'Helvetica', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-bottom-color: #f7f5f5;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    line-height: 1.6;
 }
