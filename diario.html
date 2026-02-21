@@ -1,32 +1,27 @@
 <script>
         function filterArticles(manualQuery) {
-            // Se vier um texto por fora (manualQuery), usa ele. Se não, pega o que está no input.
-            let input = manualQuery !== undefined ? manualQuery.toLowerCase() : document.getElementById('diarioSearch').value.toLowerCase();
+            // Se vier texto do Lar, usa ele. Senão, pega do campo de busca.
+            let inputValue = (typeof manualQuery === 'string') ? manualQuery : document.getElementById('diarioSearch').value;
+            let filter = inputValue.toLowerCase();
             
-            // Se foi uma busca externa, coloca o texto no campo para o usuário ver o que está filtrado
-            if (manualQuery !== undefined) {
-                document.getElementById('diarioSearch').value = manualQuery;
-            }
+            // Coloca o texto no campo de busca para o usuário ver o que buscou
+            document.getElementById('diarioSearch').value = inputValue;
 
             let items = document.getElementsByClassName('article-item');
-
+            
+            // Se não houver artigos na lista, o código abaixo não tem o que filtrar
             for (let i = 0; i < items.length; i++) {
                 let text = items[i].innerText.toLowerCase();
-                if (text.includes(input)) {
-                    items[i].style.display = "grid";
-                } else {
-                    items[i].style.display = "none";
-                }
+                items[i].style.display = text.includes(filter) ? "grid" : "none";
             }
         }
 
-        // NOVIDADE: Este bloco abaixo roda assim que o Diário termina de carregar
+        // Isso executa assim que a página abre
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const buscaVindaDeFora = urlParams.get('busca'); // Pega o que o index.html mandou
-            
-            if (buscaVindaDeFora) {
-                filterArticles(buscaVindaDeFora); // Executa o filtro automaticamente
+            const termo = urlParams.get('busca');
+            if (termo) {
+                filterArticles(termo);
             }
         };
     </script>
