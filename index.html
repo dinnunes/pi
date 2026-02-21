@@ -16,7 +16,7 @@
         <a href="butique.html">Butique</a>
         <a href="sobre.html">Sobre</a>
         
-    <main>
+     <main>
         <div class="search-container">
             <input type="text" id="mainSearch" placeholder="Buscar na pitore" onkeypress="handleSearch(event)">
         </div>
@@ -27,49 +27,32 @@
     </footer>
 
     <script>
-        // Lógica da Saudação
         function setGreeting() {
             const now = new Date();
             const hour = now.getHours();
-            let message;
-
-            if (hour >= 5 && hour < 12) {
-                message = "Bom dia.";
-            } else if (hour >= 12 && hour < 18) {
-                message = "Boa tarde.";
-            } else {
-                message = "Boa noite.";
-            }
-            
+            let message = (hour >= 5 && hour < 12) ? "Bom dia." : (hour >= 12 && hour < 18) ? "Boa tarde." : "Boa noite.";
             document.getElementById('greeting').innerText = message;
         }
 
-        // Lógica do Buscador de Navegação
         function handleSearch(event) {
             if (event.key === "Enter") {
-                let input = document.getElementById('mainSearch').value.toLowerCase().trim();
+                const searchField = document.getElementById('mainSearch');
+                if (!searchField) return; // Segurança caso o ID suma
+
+                let input = searchField.value.toLowerCase().trim();
                 
-                // Mapeamento de destinos
-                if (input.includes("buti") || input.includes("loja") || input.includes("comprar")) {
+                if (input.includes("buti") || input.includes("loja")) {
                     window.location.href = "butique.html";
-                } 
-                else if (input.includes("sobre") || input.includes("din") || input.includes("quem")) {
+                } else if (input.includes("sobre") || input.includes("din")) {
                     window.location.href = "sobre.html";
-                } 
-                else if (input.includes("dia") || input.includes("escrito") || input.includes("pensamento")) {
+                } else if (input.includes("dia") || input.includes("artigo")) {
                     window.location.href = "diario.html";
-                }
-                else if (input === "") {
-                    // Se der enter vazio, não faz nada ou vai para o diário
-                    window.location.href = "diario.html";
-                }
-                else {
-                    // Se for qualquer outra coisa, ele entende que é uma busca por assunto no Diário
+                } else if (input !== "") {
+                    // Envia para o diário com o termo de busca
                     window.location.href = "diario.html?busca=" + encodeURIComponent(input);
                 }
             }
         }
-
         setGreeting();
     </script>
 </body>
