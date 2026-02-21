@@ -1,27 +1,109 @@
-<script>
-        function filterArticles(manualQuery) {
-            // Se vier texto do Lar, usa ele. Senão, pega do campo de busca.
-            let inputValue = (typeof manualQuery === 'string') ? manualQuery : document.getElementById('diarioSearch').value;
-            let filter = inputValue.toLowerCase();
-            
-            // Coloca o texto no campo de busca para o usuário ver o que buscou
-            document.getElementById('diarioSearch').value = inputValue;
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Diário — Pitore</title>
+
+</head>
+
+<body>
+
+
+
+    <span class="logo">▭</span>
+
+
+
+    <nav>
+
+        <a href="index.html">Lar</a>
+
+        <a href="butique.html">Butique</a>
+
+        <a href="sobre.html">Sobre</a>
+
+    </nav>
+
+
+
+    <main>
+
+        <header class="diario-header">
+
+            <h1 class="section-title">Diário</h1>
+
+            <p class="simple-text">Seus artigos amigáveis.</p>
+
+        </header>
+
+
+
+        <div class="search-wrapper">
+
+            <input type="text" id="diarioSearch" placeholder="Buscar no diário" onkeyup="filterArticles()">
+
+        </div>
+
+
+
+        <ul class="article-list" id="articleList">
+
+
+
+        </ul>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>Pitore © 2026 por Din está licenciado sob CC BY 4.0</p>
+
+    </footer>
+
+
+
+    <script>
+
+        function filterArticles() {
+
+            let input = document.getElementById('diarioSearch').value.toLowerCase();
 
             let items = document.getElementsByClassName('article-item');
-            
-            // Se não houver artigos na lista, o código abaixo não tem o que filtrar
+
+
+
             for (let i = 0; i < items.length; i++) {
+
                 let text = items[i].innerText.toLowerCase();
-                items[i].style.display = text.includes(filter) ? "grid" : "none";
+
+                if (text.includes(input)) {
+
+                    items[i].style.display = "grid";
+
+                } else {
+
+                    items[i].style.display = "none";
+
+                }
+
             }
+
         }
 
-        // Isso executa assim que a página abre
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const termo = urlParams.get('busca');
-            if (termo) {
-                filterArticles(termo);
-            }
-        };
     </script>
+
+
+
+</body>
+
+</html>
