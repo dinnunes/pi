@@ -1,59 +1,93 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+
     <title>Pitore</title>
+
 </head>
+
 <body>
+
+
 
     <span class="logo">▭</span>
 
+
+
     <div class="greeting" id="greeting">...</div>
 
+
+
     <nav>
+
         <a href="butique.html">Butique</a>
+
         <a href="sobre.html">Sobre</a>
+
+    </nav>
+
+
         
-     <main>
-        <div class="search-container">
-            <input type="text" id="mainSearch" placeholder="Buscar na pitore" onkeypress="handleSearch(event)">
-        </div>
     </main>
 
+
+
     <footer>
+
         <p>Pitore © 2026 por Din está licenciado sob CC BY 4.0</p>
+
     </footer>
 
+
+
     <script>
+
+        // Lógica da Saudação
+
         function setGreeting() {
+
             const now = new Date();
+
             const hour = now.getHours();
-            let message = (hour >= 5 && hour < 12) ? "Bom dia." : (hour >= 12 && hour < 18) ? "Boa tarde." : "Boa noite.";
-            document.getElementById('greeting').innerText = message;
-        }
 
-        function handleSearch(event) {
-            if (event.key === "Enter") {
-                const searchField = document.getElementById('mainSearch');
-                if (!searchField) return; // Segurança caso o ID suma
+            let message;
 
-                let input = searchField.value.toLowerCase().trim();
-                
-                if (input.includes("buti") || input.includes("loja")) {
-                    window.location.href = "butique.html";
-                } else if (input.includes("sobre") || input.includes("din")) {
-                    window.location.href = "sobre.html";
-                } else if (input.includes("dia") || input.includes("artigo")) {
-                    window.location.href = "diario.html";
-                } else if (input !== "") {
-                    // Envia para o diário com o termo de busca
-                    window.location.href = "diario.html?busca=" + encodeURIComponent(input);
-                }
+
+
+            if (hour >= 5 && hour < 12) {
+
+                message = "Bom dia.";
+
+            } else if (hour >= 12 && hour < 18) {
+
+                message = "Boa tarde.";
+
+            } else {
+
+                message = "Boa noite.";
+
             }
+
+            
+
+            document.getElementById('greeting').innerText = message;
+
         }
+
+
+
         setGreeting();
+
     </script>
+
 </body>
+
 </html>
