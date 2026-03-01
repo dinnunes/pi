@@ -3,157 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Butique — Pitore</title>
-    <style>
-        /* DESIGN LIMPO - INSPIRADO NO ELEMENTOR, CONSTRUÍDO PARA GITHUB */
-        body {
-            background-color: #111111; /* Cinza escuro oficial do GitHub */
-            color: #e6edf3;
-            font-family: 'Helvetica Neue', Helvetica, Helvetica, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            display: block;
-            text-align: center;
-        }
-
-        /* Grid de Produtos */
-        .vitrine {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        /* Card do Produto - Réplica do Design */
-        .produto-card {
-            background-color: transparent;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .produto-card:hover {
-            border-color: #8b949e;
-            transform: translateY(-5px);
-        }
-
-        .produto-imagem {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            aspect-ratio: 3/4;
-            object-fit: cover;
-            background-color: #161b22; /* Placeholder */
-        }
-
-        .produto-titulo {
-            font-size: 1.25rem;
-            margin: 10px 0;
-            font-weight: 600;
-        }
-
-        .produto-preco {
-            font-size: 1.1rem;
-            color: #7d8590;
-            margin-bottom: 20px;
-        }
-
-        /* Botões */
-        .botoes-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: filter 0.2s;
-        }
-
-        .btn-comprar {
-            background-color: #ffffff;
-            color: #0d1117;
-        }
-
-        .btn-saiba-mais {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #30363d;
-        }
-
-        .btn:hover {
-            filter: brightness(0.8);
-        }
-
-        footer {
-            margin-top: 60px;
-            font-size: 0.8rem;
-            color: #7d8590;
-            text-align: center;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
     <span class="logo">▭</span>
 
-    <div class="container">
-        <div class="vitrine">
-            
-            <div class="produto-card">
-                <img src="img/capa-obra-din.jpg" alt="O Obra de Din" class="produto-imagem">
-                <h2 class="produto-titulo">O Obra de Din</h2>
-                <p class="produto-preco">R$ 54,00</p>
-                <div class="botoes-wrapper">
-                    <a href="https://pay.hotmart.com/V97904423H" class="btn btn-comprar">COMPRAR AGORA</a>
-                    <a href="#" class="btn btn-saiba-mais">SAIBA MAIS</a>
-                </div>
-            </div>
+    <nav>
+        <a href="index.html">Lar</a>
+        <a href="butique.html">Butique</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="loja.html">Loja</a>
+    </nav>
 
-            <div class="produto-card">
-                <img src="img/capa-pidin.jpg" alt="PiDin" class="produto-imagem">
-                <h2 class="produto-titulo">PiDin</h2>
-                <p class="produto-preco">R$ 44,00</p>
-                <div class="botoes-wrapper">
-                    <a href="https://pay.hotmart.com/X97813583I" class="btn btn-comprar">COMPRAR AGORA</a>
-                    <a href="#" class="btn btn-saiba-mais">SAIBA MAIS</a>
-                </div>
-            </div>
+    <div class="tagline">Seja a sua melhor versão.</div>
 
-                        <div class="produto-card">
-                <img src="img/capa-obra-din.jpg" alt="O Obra de Din" class="produto-imagem">
-                <h2 class="produto-titulo">O Obra de Din</h2>
-                <p class="produto-preco">R$ 54,00</p>
-                <div class="botoes-wrapper">
-                    <a href="https://pay.hotmart.com/V97904423H" class="btn btn-comprar">COMPRAR AGORA</a>
-                    <a href="#" class="btn btn-saiba-mais">SAIBA MAIS</a>
-                </div>
+    <div class="boutique-grid">
+        
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #FE1818;">Liivro</span>
+                <h2 class="product-title">PiTeni</h2>
+                <p class="product-description">Entretenimento, por gentileza.</p>
+                <p class="product-price">R$ 88</p>
             </div>
-
+            <a href="https://pay.kiwify.com.br/LPKOeCU" class="buy-button">Comprar</a>
         </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #18FF19;">Liivro</span>
+                <h2 class="product-title">PiDin</h2>
+                <p class="product-description">Dinheirooooo…</p>
+                <p class="product-price">R$ 88</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/i9cgoaj" class="buy-button">Comprar</a>
+        </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #1889FF;">Liivro</span>
+                <h2 class="product-title">PiSau</h2>
+                <p class="product-description">A saúde, do vermelho para o azul.</p>
+                <p class="product-price">R$ 108</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/giILQS6" class="buy-button">Comprar</a>
+        </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #FF7218;">Liivro</span>
+                <h2 class="product-title">PiSofia</h2>
+                <p class="product-description">Qual é a sua filosofia?</p>
+                <p class="product-price">R$ 108</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/CqPNhIl" class="buy-button">Comprar</a>
+        </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #FEEF18;">Liivro</span>
+                <h2 class="product-title">PiLin</h2>
+                <p class="product-description">There is not just one language.</p>
+                <p class="product-price">R$ 88</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/9poKbxG" class="buy-button">Comprar</a>
+        </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #ae18fe;">Liivro</span>
+                <h2 class="product-title">Pistilo</h2>
+                <p class="product-description">Indo com estilo.</p>
+                <p class="product-price">R$ 78</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/qh7pDSq" class="buy-button">Comprar</a>
+        </div>
+
+        <div class="product-card">
+            <div>
+                <span class="liivro-tag" style="color: #FF189C;">Liivro</span>
+                <h2 class="product-title">PiMor</h2>
+                <p class="product-description">Ah, o amor!</p>
+                <p class="product-price">R$ 98</p>
+            </div>
+            <a href="https://pay.kiwify.com.br/yfcSxNI" class="buy-button">Comprar</a>
+        </div>
+
     </div>
 
+    <div class="contact-area">
+    <a href="https://t.me/dinnunes" class="telegram-button">Dúvidas? ›</a>
+</div>
+    
     <footer>
         <p>Pitore © 2026 por Din está licenciado sob CC BY 4.0</p>
     </footer>
