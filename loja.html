@@ -3,71 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Loja — Pitore</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        /* BASE E CORES GITHUB DARK */
-        body {
-            background-color: #0d1117;
-            color: #e6edf3;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
+        /* Estilos específicos para a lista da Loja sem quebrar o global */
+        .loja-secao {
+            margin-top: 40px;
+            margin-bottom: 60px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .categoria-titulo {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            display: inline-block;
         }
 
-        .logo { font-size: 2rem; display: block; text-align: center; margin-bottom: 30px; }
-
-        nav { text-align: center; margin-bottom: 60px; }
-        nav a { color: #8b949e; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
-        nav a:hover { color: #fff; }
-
-        h1 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        .intro-text { color: #8b949e; font-size: 0.9rem; margin-bottom: 40px; }
-
-        /* ESTRUTURA DA LISTA */
-        .categoria-bloco { margin-bottom: 50px; }
-        
-        /* CORES POR CATEGORIA (Sinergia com os Livros) */
-        .cat-entretenimento { border-left: 3px solid #ff4500; padding-left: 15px; } /* Laranja/Energia */
-        .cat-dinheiro { border-left: 3px solid #2ecc71; padding-left: 15px; }       /* Verde/Crescimento */
-        .cat-saude { border-left: 3px solid #3498db; padding-left: 15px; }          /* Azul/Vitalidade */
-        .cat-filosofia { border-left: 3px solid #9b59b6; padding-left: 15px; }      /* Roxo/Conhecimento */
-        .cat-lingua { border-left: 3px solid #e74c3c; padding-left: 15px; }         /* Vermelho/Expressão */
-        .cat-estilo { border-left: 3px solid #f1c40f; padding-left: 15px; }         /* Dourado/Estética */
-        .cat-amor { border-left: 3px solid #e91e63; padding-left: 15px; }           /* Rosa/Conexão */
-
-        h2 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 20px; }
-
-        .item-loja {
+        .loja-item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #21262d;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a1a;
+            gap: 20px;
         }
 
-        .item-info { display: flex; flex-direction: column; }
-        .item-nome { font-weight: bold; font-size: 1rem; color: #fff; }
-        .item-desc { font-size: 0.8rem; color: #8b949e; }
+        .loja-info {
+            flex: 1;
+        }
 
-        .btn-link {
-            color: #fff;
+        .loja-nome {
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .loja-desc {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .loja-link {
             text-decoration: none;
+            color: #fff;
             font-size: 0.8rem;
-            border: 1px solid #30363d;
-            padding: 5px 12px;
+            text-transform: uppercase;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            white-space: nowrap;
             transition: 0.3s;
         }
 
-        .btn-link:hover { background-color: #fff; color: #0d1117; }
+        .loja-link:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
 
-        footer { margin-top: 80px; text-align: center; color: #484f58; font-size: 0.7rem; }
+        /* Ajuste para mobile */
+        @media (max-width: 600px) {
+            .loja-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .loja-link {
+                align-self: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -78,129 +86,110 @@
         <a href="index.html">Lar</a>
         <a href="butique.html">Butique</a>
         <a href="sobre.html">Sobre</a>
-        <a href="loja.html" style="color: #fff; font-weight: bold;">Loja</a>
+        <a href="loja.html">Loja</a>
     </nav>
 
+    <div class="tagline">Curadoria e Parcerias.</div>
+
     <div class="container">
-        <h1>Loja</h1>
-        <p class="intro-text">Curadoria de parcerias, ferramentas e objetos recomendados pela Pitore.</p>
 
-        <section class="categoria-bloco cat-entretenimento">
-            <h2>Entretenimento</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Apple TV / HBO Max</span>
-                    <span class="item-desc">Consumo visual de alta fidelidade.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #FE1818;">Entretenimento</h2>
+            
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Apple TV & HBO Max</span>
+                    <p class="loja-desc">O melhor do cinema e das produções originais para o seu repertório visual.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Kabum / Steam</span>
-                    <span class="item-desc">Hardware e experiências interativas.</span>
+
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Kabum & Steam</span>
+                    <p class="loja-desc">Tecnologia, hardware e o universo dos jogos para o seu setup de alta performance.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-dinheiro">
-            <h2>Dinheiro</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">FNO / Fiverr</span>
-                    <span class="item-desc">Estrutura digital e trabalho global.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #18FF19;">Dinheiro</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">FNO, Fiverr & Inter</span>
+                    <p class="loja-desc">Ferramentas para construção de liberdade geográfica, trabalho digital e gestão financeira inteligente.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
-            </div>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Banco Inter</span>
-                    <span class="item-desc">Gestão e autonomia financeira.</span>
-                </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-saude">
-            <h2>Saúde</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Netshoes / Olympikus</span>
-                    <span class="item-desc">O vigor do corpo em movimento.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #1889FF;">Saúde</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Netshoes, Olympikus & Cobasi</span>
+                    <p class="loja-desc">Equipamentos para o corpo em movimento e cuidados para a vida doméstica e animal.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
-            </div>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Cobasi</span>
-                    <span class="item-desc">Cuidado com a vida doméstica.</span>
-                </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-filosofia">
-            <h2>Filosofia</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Surfshark</span>
-                    <span class="item-desc">Privacidade e fronteiras digitais.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #FF7218;">Filosofia</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Surfshark, Kindle & Mercado Livre</span>
+                    <p class="loja-desc">Privacidade digital, leitura infinita e o acesso rápido a qualquer objeto de estudo.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
-            </div>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Kindle Unlimited / Mercado Livre</span>
-                    <span class="item-desc">Acesso universal ao conhecimento e objetos.</span>
-                </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-lingua">
-            <h2>Língua</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">YouTube</span>
-                    <span class="item-desc">A oratória e a imagem contemporânea.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #FEEF18;">Língua</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">YouTube</span>
+                    <p class="loja-desc">A maior plataforma de conhecimento em vídeo e oratória do mundo.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-estilo">
-            <h2>Estilo</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Shein / Beleza na Web</span>
-                    <span class="item-desc">Estética acessível e cuidados pessoais.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #ae18fe;">Estilo</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Shein, Vivara & Monte Carlo</span>
+                    <p class="loja-desc">Do estilo acessível à alta joalheria. Estética e ornamentação pessoal.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Vivara / Monte Carlo</span>
-                    <span class="item-desc">O brilho do detalhe e da permanência.</span>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Beleza na Web & Camicado</span>
+                    <p class="loja-desc">Cuidados com a imagem pessoal e a harmonia estética do seu ambiente.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
-        <section class="categoria-bloco cat-amor">
-            <h2>Amor</h2>
-            <div class="item-loja">
-                <div class="item-info">
-                    <span class="item-nome">Miess / Panty Nova</span>
-                    <span class="item-desc">A exploração do desejo e da intimidade.</span>
+        <section class="loja-secao">
+            <h2 class="categoria-titulo" style="color: #FF189C;">Amor</h2>
+            <div class="loja-item">
+                <div class="loja-info">
+                    <span class="loja-nome">Miess & Panty Nova</span>
+                    <p class="loja-desc">Exploração, desejo e o aprofundamento da intimidade e do prazer.</p>
                 </div>
-                <a href="#" class="btn-link">Acessar ›</a>
+                <a href="#" class="loja-link">Acessar ›</a>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>Pitore © 2026 • Curadoria de Afiliados</p>
+        <p>Pitore © 2026 por Din está licenciado sob CC BY 4.0</p>
     </footer>
 
 </body>
